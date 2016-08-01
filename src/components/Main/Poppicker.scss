@@ -1,0 +1,54 @@
+.rmc-picker-popup-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #373737;
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 100%;
+    filter: alpha(opacity=50);
+    z-index: 10;
+
+}
+
+ .foot-fixed {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .item {
+        border: 1px solid #ddd;
+        background-color: #fff;
+        color: #444;
+        position: relative;
+        z-index: 12;
+        display: block;
+        margin: -1px;
+        font-size: 16px;
+        border-color: #e0e0e6;
+    }
+    .item-radio {
+        padding: 0;
+        input {
+            position: absolute;
+            left: -9999px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.42857;
+        }
+        .item-content {
+            padding-right: 64px;
+            position: relative;
+            z-index: 12;
+            padding: 16px 49px 16px 16px;
+            border: none;
+            background-color: #fff;
+        }
+        .disable-pointer-events {
+            pointer-events: none;
+        }
+    }
+}
+
