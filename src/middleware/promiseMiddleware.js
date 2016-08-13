@@ -2,7 +2,7 @@
 
 export default function promiseMiddleware() {
   return next => action => {
-    const { promise, type, ...rest } = action;
+    const { promise, type } = action;
 
     if (!promise) return next(action);
 
@@ -11,16 +11,16 @@ export default function promiseMiddleware() {
     const REQUEST = type + '_REQUEST';
     const FAILURE = type + '_FAILURE';
 
-    next({ ...rest, type: REQUEST });
+    next({  type: REQUEST });
 
     return promise
       .then(res => {
-        next({ ...rest, res, type: SUCCESS });
+        next({  res, type: SUCCESS });
 
         return true;
       })
       .catch(error => {
-        next({ ...rest, error, type: FAILURE });
+        next({ error, type: FAILURE });
         console.log(error);
 
         return false;
